@@ -1,16 +1,27 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: inter;
 }
+
+
+
+button,
+select {
+    font-family: Funnel Sans;
+}
+
+
+/*Containers*/
 
 .main-container {
     
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2em auto;
+    margin: 1.6em 0;
     gap: 1em;
 }
 
@@ -41,38 +52,47 @@ html, body {
 
 .output-container div {
     flex: 1;
+    height: 55svh;
+}
+
+.output-container  p {
+    text-align: center;
+    margin: 0.5em auto;
+}
+
+.color-container {
+    display: block;
 }
 
 
-.output-color {
-    
-    width: 25px;
-    height: 100px;
-}
+
+/*Individual Colors*/
 
 
 #color-one {
-    background-color: blue;
+ 
+    background-color: #F55A5A;
 }
 
 
 #color-two {
-    background-color: yellow;
+  
+    background-color: #2B283A;
 }
 
 
 #color-three {
-    background-color: green;
+    background-color: #FBF3AB;
 }
 
 
 #color-four {
-    background-color: violet;
+    background-color: #AAD1B6;
 }
 
 
 #color-five {
-    background-color: purple;
+    background-color: #A626D3;
 }
 
 
