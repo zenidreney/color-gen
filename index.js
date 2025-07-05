@@ -3,8 +3,12 @@ const colorMode = document.getElementById("color-mode");
 const getColorBtn = document.getElementById("get-color");
 const outputContainer = document.getElementById("output-container");
 
+/*Default Parameters*/
+
 let userMode = "monochrome";
 let userColor = "#F55A5A";
+
+/*Fetch User Input*/
 
 document.addEventListener("input", (e) => {
     if (e.target === colorMode) {
@@ -37,6 +41,7 @@ getColorBtn.addEventListener("click", () => {
     fetch(`https://www.thecolorapi.com/scheme?hex=${userColor.slice(1)}&mode=${userMode}&count=4`)
         .then((res) => res.json())
         .then((data) => {
+        
             /*Collect the colors*/
             const userScheme = [userColor];
 
@@ -52,14 +57,20 @@ getColorBtn.addEventListener("click", () => {
             userScheme.forEach((hex, i) => {
                 const innerDiv = document.createElement("div");
 
-                const outputColorDiv = document.createElement("div");
-                outputColorDiv.id = `color-${i}`;
-                outputColorDiv.className = "output-color";
-                outputColorDiv.style.backgroundColor = hex;
+                    const outputColorDiv = document.createElement("div");
+                    outputColorDiv.id = `color-${i}`;
+                    outputColorDiv.className = "output-color";
+                    outputColorDiv.style.backgroundColor = hex;
+                
+                        const copySpan = document.createElement("span");
+                        copySpan.textContent = "COPY";
+                        copySpan.className = "copy";
+                    
+                    outputColorDiv.append(copySpan);
 
-                const hexNumber = document.createElement("p");
+                    const hexNumber = document.createElement("p");
 
-                hexNumber.textContent = hex;
+                    hexNumber.textContent = hex;
 
                 innerDiv.append(outputColorDiv, hexNumber);
 
