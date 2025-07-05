@@ -17,18 +17,16 @@ getColorBtn.addEventListener("click", () => {
     fetch(`https://www.thecolorapi.com/scheme?hex=${userColor.slice(1)}&mode=${userMode}&count=4`)
         .then((res) => res.json())
         .then((data) => {
-            console.log(userMode, data);
-
+        
+        /*Collect the colors*/
             const userScheme = [userColor];
-            //console.log(userColor);
-
-            for (let i = 0; i < data.colors.length; i++) {
-                userScheme.push(data.colors[i].hex.value);
-            }
-
+        
+                for (let i = 0; i < data.colors.length; i++) {
+                    userScheme.push(data.colors[i].hex.value);
+                }
+        
+        /*Update the DOM with DOM API*/
             const outputContainer = document.getElementById("output-container");
-
-            //console.log(outputContainer, userColor, data.colors[0].hex.value);
 
             outputContainer.innerHTML = "";
 
@@ -36,20 +34,17 @@ getColorBtn.addEventListener("click", () => {
                 const innerDiv = document.createElement("div");
 
                 const outputColorDiv = document.createElement("div");
+                outputColorDiv.id = `color-${i}`;
                 outputColorDiv.className = "output-color";
                 outputColorDiv.style.backgroundColor = hex;
-                //outputColorDiv.id = `color-${i}`;
 
                 const hexNumber = document.createElement("p");
-                //hexNumber.id = `hex-${i}`;
+
                 hexNumber.textContent = hex;
 
                 innerDiv.append(outputColorDiv, hexNumber);
 
                 outputContainer.append(innerDiv);
-
-
-                console.log(hex);
             });
         });
 });
