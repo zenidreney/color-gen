@@ -21,7 +21,7 @@ document.addEventListener("input", (e) => {
 /*Copy to Clipboard*/
 
 outputContainer.addEventListener("click", (e) => {
-    console.log("Clicked");
+    //console.log("Clicked");
 
     if (e.target.id.startsWith("color-") || e.target.id.startsWith("copy-")) {
         const index = e.target.id.split("-")[1];

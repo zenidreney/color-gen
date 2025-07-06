@@ -37,7 +37,6 @@ select {
 
 .output-container {
     /*background-color: red;*/
-    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -52,7 +51,6 @@ select {
     flex: 1;
     height: 50svh;
     width: 100%;
-    
 }
 
 .output-container p {
@@ -88,23 +86,29 @@ select {
 }
 
 .copy-confirm {
-    
     /*display: none;*/
     visibility: hidden;
-    position: absolute; 
-    top: 0.45em;
+    position: fixed;
+    top: 5.45em;
+ 
     font-family: Funnel Sans;
     font-size: 1rem;
     font-weight: 600;
-    background-color: #fff;
+    color: #fff;
+    background-color: rgba(37, 37, 37, 0.6);
     padding: 0.2em 0.4em;
     border-radius: 3px;
-
+    
+    opacity: 0;
+    transition: opacity 0.8s ease, visibility 0s 1s;
 }
 
 .visible {
     /*display: block;*/
     visibility: visible;
+    
+    opacity: 1;
+    transition: opacity 0.8s ease;
 }
 
 /*Individual Colors*/
@@ -141,10 +145,8 @@ select {
     .output-container {
         flex-direction: column;
     }
-    
+
     .output-container div {
         height: 25vh;
     }
 }
-
-
