@@ -23,7 +23,7 @@ document.addEventListener("input", (e) => {
 outputContainer.addEventListener("click", (e) => {
     console.log("Clicked");
 
-    if (e.target.id.startsWith("color-")) {
+    if (e.target.id.startsWith("color-") || (e.target.id.startsWith("copy-"))) {
         const index = e.target.id.split("-")[1];
 
         //console.log(document.getElementById(`color-${index}`).nextElementSibling.textContent);
@@ -63,6 +63,7 @@ getColorBtn.addEventListener("click", () => {
                     outputColorDiv.style.backgroundColor = hex;
                 
                         const copySpan = document.createElement("span");
+                        copySpan.id = `copy-${i}`;
                         copySpan.textContent = "COPY";
                         copySpan.className = "copy";
                     
