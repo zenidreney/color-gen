@@ -31,7 +31,17 @@ outputContainer.addEventListener("click", (e) => {
         const copyHex = document.getElementById(`color-${index}`).nextElementSibling.textContent;
 
         navigator.clipboard.writeText(copyHex);
-        alert("Copied");
+        //alert("Copied");
+        
+        
+        document.getElementById("copy-confirm").classList.add("visible");
+        
+        setTimeout(function(){
+            
+           document.getElementById("copy-confirm").classList.remove("visible"); 
+            
+        }, 2000);
+        
     }
 });
 

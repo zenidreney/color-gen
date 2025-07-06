@@ -1,21 +1,18 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     font-family: inter;
 }
-
-
 
 button,
 select {
     font-family: Funnel Sans;
 }
 
-
 /*Containers*/
 
 .main-container {
-    
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -26,12 +23,10 @@ select {
 }
 
 .input-container {
-    
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 0.5em;
-    
 }
 
 .input-container > input,
@@ -41,21 +36,26 @@ select {
 }
 
 .output-container {
-   
     /*background-color: red;*/
+    position: relative;
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 2em;
+
     margin: 0;
-    
-    
 }
 
 .output-container div {
     flex: 1;
-    height: 55svh;
+    height: 25vh;
+    width: 100%;
+    
 }
 
-.output-container  p {
+.output-container p {
     text-align: center;
     margin: 0.5em auto;
 }
@@ -71,14 +71,13 @@ select {
     cursor: pointer;
 }
 
-.output-color:hover > .copy{
-    
+.output-color:hover > .copy {
     opacity: 1;
 }
 
 .copy {
     opacity: 0;
-    color: #FFF;
+    color: #fff;
     font-weight: 600;
     font-size: 1.5rem;
     border: 1px solid none;
@@ -86,39 +85,62 @@ select {
     background-color: rgba(37, 37, 37, 0.6);
     border-radius: 3px;
     /*box-sizing: border-box;*/
+}
 
+.copy-confirm {
     
+    display: none;
+    position: absolute; 
+    top: 0.45em;
+    font-family: Funnel Sans;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #fff;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+
+}
+
+.visible {
+    display: block;
 }
 
 /*Individual Colors*/
 
-
 #color-0 {
- 
-    background-color: #F55A5A;
+    background-color: #f55a5a;
 }
-
 
 #color-1 {
-  
-    background-color: #2B283A;
+    background-color: #2b283a;
 }
-
 
 #color-2 {
-    background-color: #FBF3AB;
+    background-color: #fbf3ab;
 }
-
 
 #color-3 {
-    background-color: #AAD1B6;
+    background-color: #aad1b6;
 }
-
 
 #color-4 {
-    background-color: #A626D3;
+    background-color: #a626d3;
 }
 
+/*ADJUSTMENTS FOR MOBILE DEVICES*/
 
+@media (pointer: coarse) {
+    .copy {
+        opacity: 1;
+    }
+}
 
-
+@media (max-width: 626px) {
+    .output-container {
+        flex-direction: column;
+    }
+    
+    .output-container div {
+        height: 25vh;
+    }
+}
