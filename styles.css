@@ -89,7 +89,8 @@ select {
 
 .copy-confirm {
     
-    display: none;
+    /*display: none;*/
+    visibility: hidden;
     position: absolute; 
     top: 0.45em;
     font-family: Funnel Sans;
@@ -102,7 +103,8 @@ select {
 }
 
 .visible {
-    display: block;
+    /*display: block;*/
+    visibility: visible;
 }
 
 /*Individual Colors*/
